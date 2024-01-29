@@ -51,7 +51,7 @@ const putItem = (req, res) => {
         //example how to send only the status code (still valid http response)
         return res.sendStatus(404);
     }
-    if (req.body.name) {
+    if (!req.body.name) {
         return res.status(400).json({error: 'item name missing'});
     }
     items[index].name = req.body.name;
