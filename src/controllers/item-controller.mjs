@@ -1,19 +1,15 @@
-const items = [
-    {id: 1, name: 'item1'},
-    {id: 2, name: 'item2'},
-    {id: 3, name: 'item kolme'},
-    {id: 4, name: 'item neljä'},
-];
+
+import items from '../models/item-model.mjs';
 
 const getItems = (req, res) => {
     res.json(items);
 };
 
 const getItemById = (req, res) => {
-    console.log('request item id', req.params.id);
-    let item = items.find(item => item.id === parseInt(req.params.id));
-    if (item) {
-      res.json(item.name);
+    //console.log('request item id', req.params.id);
+    let itemFound = items.find((item) => item.id === req.params.id);
+    if (itemFound) {
+      res.json(itemFound);
     } else {
       res.status(404).json({error: '404 not found'});
     }
@@ -34,7 +30,7 @@ const postItem = (req, res) => {
 const deleteItem = (req, res) => {
     //TODO: implement delete item
     //tip: array.findIndex
-    const index = items.findIndex(item => item.id === parseInt(req.params.id));
+    const index = items.findIndex((item) => item.id === req.params.id);
     if (index === -1) {
         //example how to send only the status code (still valid http response)
         return res.sendStatus(404);
@@ -42,11 +38,11 @@ const deleteItem = (req, res) => {
     const deletedItems = items.splice(index, 1);
     console.log('deleteItem:', deletedItems);
     res.json({deleted_item: deletedItems[0]});
-    res.sendStatus(204);
+    //res.sendStatus(204);
 };
 
 const putItem = (req, res) => {
-    const index = items.findIndex(item => item.id === parseInt(req.params.id));
+    const index = items.findIndex((item) => item.id === req.params.id);
     if (index === -1) {
         //example how to send only the status code (still valid http response)
         return res.sendStatus(404);
@@ -56,7 +52,6 @@ const putItem = (req, res) => {
     }
     items[index].name = req.body.name;
     res.json({updated_item: items[index]});
-    res.json({message: 'put placeholder'});
 };
 
 export {getItems, getItemById, postItem, deleteItem, putItem};
