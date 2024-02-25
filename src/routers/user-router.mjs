@@ -1,5 +1,6 @@
 import express from 'express';
-import { getUsers, getUserById, postUser, postLogin, putUser, deleteUser } from '../controllers/user-controller.mjs';
+import { getUsers, getUserById, postUser, putUser, deleteUser } from '../controllers/user-controller.mjs';
+import { authenticateToken } from '../middlewares/authentication.mjs';
 
 const userRouter = express.Router();
 
@@ -8,19 +9,17 @@ const userRouter = express.Router();
 //user endpoint
 userRouter.route('/')
 //list users
-.get(getUsers)
+.get(authenticateToken, getUsers)
+// update user
+.put(authenticateToken, putUser)
 //user registration
 .post(postUser);
 
 userRouter.route('/:id')
-.get(getUserById)
+.get(authenticateToken, getUserById)
 
-.put(putUser)
+.delete(authenticateToken, deleteUser);
 
-.delete(deleteUser);
-
-
-userRouter.post('/login', postLogin);
 
 export default userRouter;
 
