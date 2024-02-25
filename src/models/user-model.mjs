@@ -49,7 +49,7 @@ const updateUserById = async (user) => {
         const sql = 'UPDATE Users SET username=?, password=?, email=? WHERE user_id=?';
         const params = [user.username, user.password, user.email, user.user_id];
         const [result] = await promisePool.query(sql, params);
-        //*console.log(result);
+        console.log(result);
         return {message: 'user data updated', user_id: user.user_id};
 
         } catch (error) {

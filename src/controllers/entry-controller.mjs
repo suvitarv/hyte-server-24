@@ -20,9 +20,11 @@ const getEntryById = async (req, res) => {
 };
 
 const postEntry = async (req, res) => {
-  const {user_id, entry_date, mood, weight, sleep_hours, notes} = req.body;
+  const {entry_date, mood, weight, sleep_hours, notes} = req.body;
+  const user_id = req.user.user_id;
+  console.log(req.user);
   if (entry_date && (weight || mood || sleep_hours || notes) && user_id) {
-    const result = await addEntry(req.body);
+    const result = await addEntry({user_id, entry_date, mood, weight, sleep_hours, notes});
     if (result.entry_id) {
       res.status(201);
       res.json({message: 'New entry added.', ...result});
@@ -43,8 +45,7 @@ const putEntry = async (req, res) => {
   if ((entry_date || weight || mood || sleep_hours || notes) && entry_id) {
 
     const entry = await findEntryById(entry_id)
-    console.log(entry)
-    if(entry && entry.user_id != user_id) {
+    if (entry[0].user_id != user_id) {
       return res.status(401).json({error:401, message: "User prohibited"})
     }
 
@@ -60,6 +61,15 @@ const putEntry = async (req, res) => {
 };
 
 const deleteEntry = async (req, res) => {
+  const entry_id = req.params.id;
+  const user_id = req.user.user_id;
+  const entry = await findEntryById(entry_id);
+  if (!entry[0]) {
+    return res.status(404).json({error: 404, message: "Entry not found"})
+  }
+    if (entry[0].user_id != user_id) {
+      return res.status(401).json({error:401, message: "User prohibited"})
+    }
   const result = await deleteEntryById(req.params.id);
   if (result.error) {
     return res.status(result.error).json(result);

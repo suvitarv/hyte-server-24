@@ -1,6 +1,6 @@
 import {deleteUserById, insertUser, listAllUsers, selectUserById, updateUserById} from '../models/user-model.mjs';
 import bcrypt from 'bcryptjs';
-// TODO: implement route handlers below for users (real data)
+
 
 const getUsers = async (req, res) => {
   const result = await listAllUsers();
@@ -35,6 +35,11 @@ const postUser = async (req, res) => {
 
 const putUser = async (req, res) => {
  const user_id = req.user.user_id;
+
+ const user = await selectUserById(user_id)
+   if (user.user_id != user_id) {
+     return res.status(401).json({error:401, message: "User prohibited"})
+   }
  const {username, password, email} = req.body;
  const salt = await bcrypt.genSalt(10);
  const hashedPassword = await bcrypt.hash(password, salt);
