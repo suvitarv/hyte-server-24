@@ -12,6 +12,11 @@ POST localhost:3000/api/entries
 Delete entry
 DELETE localhost:3000/api/entries/7
 
+Add validation rules entry-router.mjs
+post and put
+
+
+
 
 
 
