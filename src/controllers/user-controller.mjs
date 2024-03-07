@@ -74,7 +74,7 @@ const putUser = async (req, res) => {
 const deleteUser = async (req, res) => {
   const result = await deleteUserById(req.params.id);
   if (result.error) {
-    return res.satus(result.error).json(result);
+    return res.status(result.error).json(result);
   }
   return res.json(result);
 };
