@@ -2,55 +2,47 @@
 import express from 'express';
 import path from 'path';
 import {fileURLToPath} from 'url';
+import itemRouter from './routers/item-router.mjs';
+import userRouter from './routers/user-router.mjs';
+import entryRouter from './routers/entry-router.mjs';
+import logger from './middlewares/logger.mjs';
+import authRouter from './routers/auth-router.mjs';
+import cors from 'cors';
+import { errorHandler, notFoundHandler } from './middlewares/error-handler.mjs';
 const hostname = '127.0.0.1';
 const port = 3000;
 const app = express();
 
+
+app.use(cors());
+
+app.use(logger);
+
+app.use(express.json());
+
 app.use(express.static('public'));
+
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 app.use('/sivusto', express.static(path.join(__dirname, '../public')));
 
-const items = [
-  {id: 1, name: 'item1'},
-  {id: 2, name: 'item2'},
-  {id: 3, name: 'item kolme'},
-  {id: 4, name: 'item neljä'},
-];
 
-app.get('/items/', (req, res) => {
-  res.json(items);
-});
+app.use('/items', itemRouter);
+app.use('/api/users', userRouter);
 
-app.get('/items/:id', (req, res) => {
-  console.log('request item id', req.params.id);
-  let item = items.find(item => item.id === parseInt(req.params.id));
-  if (item) {
-    res.json(item.name);
-  } else {
-    res.status(404).json({error: '404 not found'});
-  }
-});
+//users resource
+app.use('/api/entries', entryRouter);
 
-app.get('/items', (req, res) => {
-  console.log('request item id', req.params.id);
-  let item = 'tähän oikea objekti!'
-  res.json(items);
-});
+//user authentication
+app.use('/api/auth', authRouter);
 
-//itemin lisäys POST http://127.0.0.1:3000/items/
-app.post('/items', (req, res) => {
-  res.json({message: 'item created'});
-});
 
-app.get('/items', (req, res) => {
-  res.json([
-    {id: 1, name: 'item1'},
-    {id: 2, name: 'item2'},
-  ]);
-});
+//default 404 note found
+app.use(notFoundHandler);
 
+//Error handler for all errors
+app.use(errorHandler);
 
 
 app.get('/', (req, res) => {
