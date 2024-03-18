@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthdiary</title>
+    <link rel="stylesheet" href="/dist/assets/css/styles.css" />
+    <!--Haettu yhtenäisyyden vuoksi fontti googlesta-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/dist/assets/head-os_VHZJ_.js"></script>
+    <link rel="modulepreload" crossorigin href="/dist/assets/fetch-hDQBONsW.js">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <button id="logout">LogOut</button>
+        </nav>
+    </header>
+    <main>
+        <h1>Tervetuloa</h1>
+
+        <div class="user"> <span id="name">NIMI TÄHÄN</span></div>
+
+        <section id="about">
+             
+             <p>Tämä on minun yksilöprojektini näyttää osaamistani.</p>
+
+        </section>
+
+        <section id="information">
+            <h2>Terveyspäiväkirja sovelluksessa</h2>
+            <p>Voit kertoa päivittäisestä elämästäsi, kuten nukutut tunnit, mikä olo. Voit myös päivittää ja poistaa merkintöjäsi ja hakea laitetut päivitykset</p>
+        </section>
+
+        <table class="styled-table">
+            <thead>
+              <tr>
+                <th>User Name</th>
+                <th>User Level</th>
+                <th>Info</th>
+                <th>Delete</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody class="tbody">
+              <!-- tänne haetaan kaikki käyttäjät -->
+              <!-- # Get all users -->
+              <!-- GET http://127.0.0.1:3000/api/users -->
+            </tbody>
+          </table>
+          <button class="get_users">Hae users tiedot</button>
+
+        <div class="container">
+            <div class="card" id="information_card">
+            <img src="/dist/assets/images/cardimage.jpg" alt="cardimage" id="picture" />
+              <div class="card-content">
+                <h4>Treenipäiväkirja</h4>
+                <p>Olipas kiva treenipäivä tänään, tein paljon maaleja ja rauta nousi salilla. Hyvät yöunet ja kunnon terveellinen ravinto saa aina jaksamaan </p>
+                
+              </div>
+            </div>
+            <div id="app_information">
+                <form id="post">
+                    <label for="created_at">Date</label><br>
+                    <input type="datetime-local" id="date" name="date" required><br>
+                    <label for="mood">Select mood:</label><br>
+                    <select id="moods" name="moods" required>
+                        <option value="#"></option>
+                        <option value="Happy">Happy</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Exided">Exided</option>
+                        <option value="Angry">Angry</option>
+                      </select><br>
+                  <!--  <input type="text" id="mood" name="mood" value=""><br> -->
+                    <label for="weight">Weight:</label><br>
+                    <input type="text" id="weight" name="weight" value="" required><br>
+                    <label for="sleep_hours">Sleep_hours:</label><br>
+                    <input type="int" id="sleep" name="hours" value="" required><br>
+                    <label for="notes">Notes</label><br>
+                    <input type="text" id="notes" name="notes" value="" required><br>
+                    <input name="submit" type="submit" value="Update" class="update" />
+                </form>
+                
+            </div>
+
+          </div>
+
+        
+    </main>
+  </body>
+</html>
