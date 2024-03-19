@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/dist/assets/head-os_VHZJ_.js"></script>
+    <script type="module" crossorigin src="/dist/assets/head-jf5PC1Iy.js"></script>
     <link rel="modulepreload" crossorigin href="/dist/assets/fetch-hDQBONsW.js">
   </head>
   <body>
@@ -22,52 +22,36 @@
         </nav>
     </header>
     <main>
-        <h1>Tervetuloa</h1>
+        <h1>Welcome</h1>
 
         <div class="user"> <span id="name">NIMI TÄHÄN</span></div>
 
         <section id="about">
              
-             <p>Tämä on minun yksilöprojektini näyttää osaamistani.</p>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum itaque deleniti reiciendis iusto qui nihil voluptatem at impedit illo voluptates eaque iure unde magni quia, quisquam quaerat.</p>
 
         </section>
 
         <section id="information">
-            <h2>Terveyspäiväkirja sovelluksessa</h2>
-            <p>Voit kertoa päivittäisestä elämästäsi, kuten nukutut tunnit, mikä olo. Voit myös päivittää ja poistaa merkintöjäsi ja hakea laitetut päivitykset</p>
+            <h2>In HealthDiary software </h2>
+            <p>You can post date, mood, weight, slept hours and tell what kind your day was. You can also update and delete your notes. Remember logout when you are ready. Have nice day!</p>
         </section>
 
-        <table class="styled-table">
-            <thead>
-              <tr>
-                <th>User Name</th>
-                <th>User Level</th>
-                <th>Info</th>
-                <th>Delete</th>
-                <th>ID</th>
-              </tr>
-            </thead>
-            <tbody class="tbody">
-              <!-- tänne haetaan kaikki käyttäjät -->
-              <!-- # Get all users -->
-              <!-- GET http://127.0.0.1:3000/api/users -->
-            </tbody>
-          </table>
-          <button class="get_users">Hae users tiedot</button>
 
         <div class="container">
+            <div id="entries_container"></div>
             <div class="card" id="information_card">
-            <img src="/dist/assets/images/cardimage.jpg" alt="cardimage" id="picture" />
-              <div class="card-content">
-                <h4>Treenipäiväkirja</h4>
-                <p>Olipas kiva treenipäivä tänään, tein paljon maaleja ja rauta nousi salilla. Hyvät yöunet ja kunnon terveellinen ravinto saa aina jaksamaan </p>
+            <img src="/dist/assets/cardimage-5TyOOsuJ.jpg" alt="cardimage" id="picture" />
+              <div class="card_content">
+               
                 
               </div>
+
             </div>
             <div id="app_information">
                 <form id="post">
                     <label for="created_at">Date</label><br>
-                    <input type="datetime-local" id="date" name="date" required><br>
+                    <input type="date" id="date" name="date" required><br>
                     <label for="mood">Select mood:</label><br>
                     <select id="moods" name="moods" required>
                         <option value="#"></option>
@@ -82,9 +66,11 @@
                     <label for="sleep_hours">Sleep_hours:</label><br>
                     <input type="int" id="sleep" name="hours" value="" required><br>
                     <label for="notes">Notes</label><br>
-                    <input type="text" id="notes" name="notes" value="" required><br>
-                    <input name="submit" type="submit" value="Update" class="update" />
+                    <textarea id="notes" name="notes" value="" required></textarea><br>
+                    <input name="submit" type="submit" value="Post" class="post" />
+                    
                 </form>
+                <div id="response_text"></div>
                 
             </div>
 
