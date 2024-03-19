@@ -1,15 +1,15 @@
 import {
-  listAllEntries,
   findEntryById,
   addEntry,
   deleteEntryById,
   updateEntryById,
-  listAllEntriesById,
+  listAllEntriesByUserId,
 } from '../models/entry-model.mjs';
 import {validationResult} from 'express-validator';
 
+
 const getEntries = async (req, res) => {
-  const result = await listAllEntriesById(req.user.user_id);
+  const result = await listAllEntriesByUserId(req.user.user_id);
   if (!result.error) {
     res.json(result);
   } else {

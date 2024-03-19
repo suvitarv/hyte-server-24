@@ -17,8 +17,8 @@ const postLogin = async (req, res) => {
     return res.json({message: 'logged in succesfully', user, token});
   } else {
     return res
-      .status(404)
-      .json({error: 401, message: 'Invalid username or password'});
+        .status(404)
+        .json({error: 401, message: 'Invalid username or password'});
   }
 };
 

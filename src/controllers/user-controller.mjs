@@ -32,8 +32,8 @@ const postUser = async (req, res, next) => {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
     const result = await insertUser(
-      {username, email, password: hashedPassword},
-      next
+        {username, email, password: hashedPassword},
+        next
     );
     return res.status(201).json(result);
   } else {
@@ -54,6 +54,7 @@ const putUser = async (req, res) => {
   const {username, password, email} = req.body;
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
+
 
   if (user_id && username && password && email) {
     const result = await updateUserById({

@@ -19,11 +19,11 @@ entryRouter
     authenticateToken,
     body('entry_date').trim().isDate().withMessage('Entry date must be a date'),
     body('mood')
-      .trim()
-      .isLength({min: 3, max: 50})
-      .withMessage('Mood has to be between 3 and 50 letters')
-      .isAlphanumeric()
-      .withMessage('Can be only numbers and letters'),
+            .trim()
+            .isLength({min: 3, max: 50})
+            .withMessage('Mood has to be between 3 and 50 letters')
+            .isAlphanumeric()
+            .withMessage('Can be only numbers and letters'),
     body('weight')
       .trim()
       .isFloat({min: 30, max: 200})
