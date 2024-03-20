@@ -15,9 +15,9 @@ DELETE localhost:3000/api/entries/7
 Add validation rules entry-router.mjs
 post and put
 
+<h3><b>Frontend UI<b><h>
 
-
-
+![login screenshot](login.png)
 
 
 
