@@ -18,25 +18,25 @@
   a {
     text-decoration: none;
   }
-  
+
   input,
   button {
     border: none;
     outline: none;
   }
-  
+
   /* ION-ICON RESET */
   ion-icon {
     --ionicon-stroke-width: 40px;
     font-size: 24px;
   }
-  
+
   /* BACKGROUND-IMAGE WRAPPER */
   .background_wrapper {
     position: relative;
     width: 100%;
     height: 100vh;
-  
+
     display: grid;
     align-items: center;
     justify-content: center;
@@ -50,7 +50,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("./img/backroundimage.jpg");
+    background: url("/img/backroundimage.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,7 +64,7 @@
     background-color: hsla(0, 0%, 10%, 0.1);
     border: 2px solid hsl(0, 0%, 90%);
     color: hsla(0, 0%, 100%, 0.897);
-    
+
     border-radius: 1.5rem;
     backdrop-filter: blur(10px);
     padding: 2.5rem 2rem 3.5rem;
@@ -96,7 +96,7 @@
     width: 100%;
     position: relative;
   }
-  
+
   /* LOGIN-INPUT */
   .login__input {
     width: 100%;
@@ -126,7 +126,7 @@
     z-index: 10;
     cursor: pointer;
   }
-  
+
   /* BUTTON LOGIN */
   .button__login {
     width: 100%;
