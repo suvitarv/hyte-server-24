@@ -50,7 +50,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("backroundimage.webp");
+    background: url("./img/backroundimage.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
