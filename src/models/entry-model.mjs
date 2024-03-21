@@ -31,7 +31,11 @@ const findEntryById = async (id) => {
       [id]
     );
     console.log('row', rows);
-    return rows[0];
+    return {...rows[0], "entry_date": new Date(rows[0].entry_date).toLocaleDateString("fi-FI",{
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    })};
   } catch (e) {
     console.error('error', e.message);
     return {error: e.message};
