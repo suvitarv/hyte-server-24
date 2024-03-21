@@ -45,7 +45,7 @@ entryRouter
     .put(
         authenticateToken,
         param('id').trim().isInt(),
-        body('entry_date').trim().isDate().withMessage('Entry date must be a date'),
+        body('entry_date').trim().isDate().withMessage('Entry date must be a date').optional(),
         body('mood')
             .trim()
             .isLength({min: 3, max: 50})
