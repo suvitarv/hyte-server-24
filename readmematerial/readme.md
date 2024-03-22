@@ -1,19 +1,14 @@
 Yksilöprojekti on tehty loppukäyttäjälle, jossa käyttäjä voi rekisteröityä, kirjautua sisään, kertoa terveystietojaan sen jälkeen päivittää ja poistaa niitä.
 
-<h3><b>Frontend UI<b><h>
 
-![login screenshot](login.png)
 
 # hyte-server back-end server
 Node.Js + Express
 
-Start dev server: `npm run dev`
-<h3><b>Usage<b></h3>
-
 <h3><b>Link to my frontend and the website:<b></h3>
 
--
--
+- https://hyte-server-suvta.northeurope.cloudapp.azure.com/login.html
+- https://github.com/suvitarv/html-teht-v-t/tree/main/viteprojekti/vite-project
 
 
 <h3><b>/api/auth<b></h3>
@@ -23,27 +18,12 @@ Start dev server: `npm run dev`
     https://hyte-server-suvta.northeurope.cloudapp.azure.com/api/auth/login
   content-type: application/json
   {
-    "username": "johnDoe4",
-    "password": "Hashed_password4"
+    "username": "lentokone",
+    "password": "lentokone989"
   }
 
-  ## Get user by token (requires token)
 
-  Authorization: Bearer <token>
-
-```
 <h3><b>/api/users<b></h3>
-
-example queries
-
-```
-
-
-  Authorization: Bearer <token>
-
-  # Get user by id (requires token)
-
-  Authorization: Bearer <token>
 
 
   # Create user (register)
@@ -51,17 +31,13 @@ example queries
   content-type: application/json
 
   {
-    "username": "johndoe4",
-    "password": "hashed_password4",
-    "email": "email@email.com"
+    "username": "testikayttaja",
+    "password": "testikayttaja787",
+    "email": "testikayttaja@example.com"
   }
-
-```
-
 
 <h3><b>/api/entries<b></h3>
 
-example queries
 
 # Post entry
 https://hyte-server-suvta.northeurope.cloudapp.azure.com/api/entries
@@ -95,27 +71,28 @@ content-type: application/json
 
 # Delete: poistaa käyttäjän päivityksen
 https://hyte-server-suvta.northeurope.cloudapp.azure.com/api/entries/${entry_id}
-```
+
 <h3><b>Database structure<b></h3>
 
-![Database structure](database.png)
+![alt text](<screenshot_database.png>)
 
 
 <h3><b>Frontend UI<b></h3>
 
 
-![Register page](backroundimage.jpg)
+![Register page](rekisteröinti.png)
 
-![Login page](backroundimage.jpg)
+![Login page](sisäänkirjaus.png)
 
-![App page](cardimage.jpg)
+![App page](tervetuloa.png)
 
-
+![App page](toiminnallisuudet.png)
 
 
 <h3><b>Known bugs:<b></h3>
-- Käyttäjälle ei tule infoa kuin consoleen että käyttäjätunnuksen luominen onnistui tai epäonnistui. Ja jos epäonnistui miksi.
--Käyttäjä ei saa myöskään tiedon lisäämisestä ja päivittämisestä erillistä ilmoitusta, mutta vieressä olevat kortit paljastavat syntyykö uusi kortti tai päivittyykö valitseman kortin tiedot.
+
+- Käyttäjälle ei tule infoa kuin consoleen että käyttäjätunnuksen luominen onnistui tai epäonnistui. Ja jos epäonnistui miksi. Kun käyttäjä on luotu pitää painaa login nappia.
+- Käyttäjä ei saa myöskään tiedon lisäämisestä ja päivittämisestä erillistä ilmoitusta, mutta vieressä olevat kortit paljastavat syntyykö uusi kortti tai päivittyykö valitseman kortin tiedot.
 
 
 
@@ -128,8 +105,9 @@ https://hyte-server-suvta.northeurope.cloudapp.azure.com/api/entries/${entry_id}
 
 - https://www.google.com/search?sca_esv=7479081811d2e948&rlz=1C1CHBD_fiFI1081FI1083&q=sunset&tbm=isch&source=lnms&sa=X&ved=2ahUKEwj29PPzi--EAxWaLRAIHf_7A4gQ0pQJegQIEBAB&biw=1920&bih=945&dpr=1#imgrc=yujh_824yjUtmM
 
-*Otettu taustakuva tästä osoitteesta
+* Otettu taustakuva tästä osoitteesta
 
+* Kortissa oleva kuva on omasta arkistosta
 
 
 
