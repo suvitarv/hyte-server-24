@@ -17,12 +17,10 @@ Start dev server: `npm run dev`
 
 
 <h3><b>/api/auth<b></h3>
-example queries
 
-```
 
   # Login
-
+    https://hyte-server-suvta.northeurope.cloudapp.azure.com/api/auth/login
   content-type: application/json
   {
     "username": "johnDoe4",
@@ -58,29 +56,12 @@ example queries
     "email": "email@email.com"
   }
 
-  # Update user's own data (requires token)
-
-  Authorization: Bearer <token>
-  content-type: application/json
-
-  {
-    "username": "johndoe4",
-    "password": "hashed_password4",
-    "email": "email@email.com"
-  }
 ```
 
 
 <h3><b>/api/entries<b></h3>
 
 example queries
-```
-# Get all entries for a logged in user (requires token)
-
-Authorization: Bearer <token>
-
-
-
 
 # Post entry
 https://hyte-server-suvta.northeurope.cloudapp.azure.com/api/entries
@@ -88,13 +69,11 @@ content-type: application/json
 
 
 {
-
   "entry_date": "2024-03-17",
   "mood": "Sad",
   "weight": .6,
   "sleep_hours": 7,
   "notes": "This was a good day"
-
 }
 
 # Tietojen päivitys
