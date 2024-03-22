@@ -114,6 +114,8 @@ https://hyte-server-suvta.northeurope.cloudapp.azure.com/api/entries/${entry_id}
 
 
 <h3><b>Known bugs:<b></h3>
+- Käyttäjälle ei tule infoa kuin consoleen että käyttäjätunnuksen luominen onnistui tai epäonnistui. Ja jos epäonnistui miksi.
+-Käyttäjä ei saa myöskään tiedon lisäämisestä ja päivittämisestä erillistä ilmoitusta, mutta vieressä olevat kortit paljastavat syntyykö uusi kortti tai päivittyykö valitseman kortin tiedot.
 
 
 

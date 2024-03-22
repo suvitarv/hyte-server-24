@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthdiary</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <!--Haettu yhtenäisyyden vuoksi fontti googlesta-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/head-VZsnjB-K.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/fetch-hDQBONsW.js">
+  </head>
+  <body>
+    <header>
+        <nav>
+            <button id="logout">LogOut</button>
+        </nav>
+    </header>
+    <main>
+        <h1>Welcome</h1>
+
+        <div class="user"> <span id="name">NIMI TÄHÄN</span></div>
+
+        <section id="about">
+
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum itaque deleniti reiciendis iusto qui nihil voluptatem at impedit illo voluptates eaque iure unde magni quia, quisquam quaerat.</p>
+
+        </section>
+
+        <section id="information">
+            <h2>In HealthDiary software </h2>
+            <p>You can post date, mood, weight, slept hours and tell what kind your day was. You can also update and delete your notes. Remember logout when you are ready. Have nice day!</p>
+        </section>
+
+
+        <div class="container">
+            <div id="entries_container"></div>
+            <div class="card" id="information_card">
+            <img src="/assets/cardimage-5TyOOsuJ.jpg" alt="cardimage" id="picture" />
+              <div class="card_content">
+
+
+              </div>
+
+            </div>
+            <div id="app_information">
+                <form id="post">
+                    <label for="created_at">Date</label><br>
+                    <input type="date" id="date" name="date" required><br>
+                    <label for="mood">Select mood:</label><br>
+                    <select id="moods" name="moods" required>
+                        <option value="#"></option>
+                        <option value="Happy">Happy</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Exided">Exided</option>
+                        <option value="Angry">Angry</option>
+                      </select><br>
+                  <!--  <input type="text" id="mood" name="mood" value=""><br> -->
+                    <label for="weight">Weight:</label><br>
+                    <input type="text" id="weight" name="weight" value="" required><br>
+                    <label for="sleep_hours">Sleep_hours:</label><br>
+                    <input type="int" id="sleep" name="hours" value="" required><br>
+                    <label for="notes">Notes</label><br>
+                    <textarea id="notes" name="notes" value="" required></textarea><br>
+                    <input name="submit" type="submit" value="Post" class="post" />
+
+                </form>
+                <div id="response_text"></div>
+
+            </div>
+
+          </div>
+
+
+    </main>
+
+  </body>
+</html>
